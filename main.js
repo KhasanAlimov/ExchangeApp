@@ -31,7 +31,7 @@ fetch(allCurrenciesData)
 		  			if (inputValue < minAmountObj.minAmount) {
 
 		  				d3.select('#estimatedField')
-		  					.html('<p class="text-red-500">Not enough amount!</p>')
+		  					 .html('<p class="text-red-500">Not enough amount!</p>')
 		  			}else{
 			  			const estimatedAmountData = `https://api.changenow.io/v1/exchange-amount/${inputValue}/${ticckers}?api_key=${APIKey}`;
 
