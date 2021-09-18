@@ -36,11 +36,11 @@ fetch(allCurrenciesData)
 			  			const estimatedAmountData = `https://api.changenow.io/v1/exchange-amount/${inputValue}/${ticckers}?api_key=${APIKey}`;
 
 				  		fetch(estimatedAmountData)
-							.then(response => response.json())
-						  	.then(estAmObj => {
+						.then(response => response.json())
+						.then(estAmObj => {
 
-						  		d3.select('#estimatedField')
-						  		.text(estAmObj.estimatedAmount)
+							d3.select('#estimatedField')
+							.text(estAmObj.estimatedAmount)
 						  })
 					  }
 		  		}
@@ -157,10 +157,10 @@ fetch(allCurrenciesData)
   		
   		// Close search input on click
   		closeIcon.append('i')
-				  		.attr('class', 'fas fa-times cursor-pointer')
-				  		.on('click', () => {
-				  			removeSearchInput()
-				  		})
+		.attr('class', 'fas fa-times cursor-pointer')
+		.on('click', () => {
+			removeSearchInput()
+		})
 
   		searchInput.node().focus()
 
