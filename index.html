@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Обмен криптовалют</title>
+
+	<!-- Css library Tailwind -->
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Google fonts -- font family Vollkorn -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
+
+	<!-- Font awesome CDN -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+</head>
+<body>
+	<div id="app" class="flex items-center h-screen">
+
+		<div class="md:w-10/12 w-11/12 mx-auto p-2 max-w-screen-lg" style="font-family: 'Vollkorn', serif;">
+
+			<!-- Headline -->
+			<div class="mb-16">
+				<h1 class="text-4xl">Crypto Exchange</h1>
+  			<p class="mt-1">Exchange fast and easy</p>
+			</div>
+			
+			<!-- Form -->
+			<div id="exchangeForm">
+				<form action="">
+					<div id="exchangeInputs" class="sm:flex justify-between">
+
+						<!-- Input from left side -->
+						<div id="leftSide" class="flex rounded-sm bg-gray-50 relative">
+							<input type="number" min="0" id="inputField" class="outline-none py-1.5 px-2 w-8/12 bg-transparent">
+						 	<div class="w-4/12 currencies relative flex justify-around items-center cursor-pointer"></div>
+					 	</div>
+
+					 	<div class="w-1/12 icons-color flex justify-center items-center my-3 sm:ml-0 ml-auto">
+					 		<i class="fas fa-exchange-alt cursor-pointer transform rotate-90 sm:rotate-0" id="swap"></i>
+					 	</div>
+
+					 	<!-- Input from right side -->
+					 	<div id="rightSide" class="flex rounded-sm bg-gray-50 relative">
+							<div class="py-1.5 px-2 w-8/12" id="estimatedField"></div>
+						 	<div class="w-4/12 currencies relative flex justify-around items-center cursor-pointer"></div>
+					  </div>
+					</div>
+
+					<div class="mt-5">
+						<label for="ethereumAddress">Your Ethereum address</label>
+						<div class="sm:flex justify-between">
+							<input type="text" id="ethereumAddress" class="sm:w-4/5 w-full mb-2 outline-none bg-gray-50 py-1.5 px-2 rounded-sm">
+							<button type="submit" class="sm:w-2/12 mt-2 w-full text-white outline-none py-1.5 px-2 rounded-sm">Exchange</button>
+						</div>
+					</div>
+					
+				</form>
+			</div>	
+
+		</div>
+  	
+	</div>
+
+	<!-- D3.js CDN -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.0.1/d3.min.js" integrity="sha512-1e0JvdNhUkvFbAURPPlFKcX0mWu/b6GT9e0uve7BW4MFxJ15q4ZCd/Llz+B7/oh+qhw7/l6Q1ObPt6aAuR01+Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<script src="main.js"></script>
+</body>
+</html>
