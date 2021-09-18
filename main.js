@@ -20,8 +20,8 @@ fetch(allCurrenciesData)
 			let minAmountData = `https://api.changenow.io/v1/min-amount/${ticckers}?api_key=${APIKey}`;
 
 			fetch(minAmountData)
-				.then(response => response.json())
-		  	.then(minAmountObj => {
+			 .then(response => response.json())
+		  	 .then(minAmountObj => {
 
 		  		const inputField = d3.select('#inputField')
 		  		let inputValue = inputField.node().value = minAmountObj.minAmount;
@@ -31,16 +31,16 @@ fetch(allCurrenciesData)
 		  			if (inputValue < minAmountObj.minAmount) {
 
 		  				d3.select('#estimatedField')
-		  					 .html('<p class="text-red-500">Not enough amount!</p>')
+		  				.html('<p class="text-red-500">Not enough amount!</p>')
 		  			}else{
 			  			const estimatedAmountData = `https://api.changenow.io/v1/exchange-amount/${inputValue}/${ticckers}?api_key=${APIKey}`;
 
 				  		fetch(estimatedAmountData)
-								.then(response => response.json())
+							.then(response => response.json())
 						  	.then(estAmObj => {
 
 						  		d3.select('#estimatedField')
-						  			.text(estAmObj.estimatedAmount)
+						  		.text(estAmObj.estimatedAmount)
 						  })
 					  }
 		  		}
@@ -62,30 +62,30 @@ fetch(allCurrenciesData)
   	const activeCurrencies = () => {
 
 			currency.append('span')
-							.append('img')
-							.attr('src', (d, i) => data[showedData[i]].image)
-							.attr('alt', (d, i) => data[showedData[i]].name);
+				.append('img')
+				.attr('src', (d, i) => data[showedData[i]].image)
+				.attr('alt', (d, i) => data[showedData[i]].name);
 
 			currency.append('span')
-							.attr('class', 'uppercase')
-							.text((d, i) => data[showedData[i]].ticker)
+				.attr('class', 'uppercase')
+				.text((d, i) => data[showedData[i]].ticker)
 
 			currency.append('span')
-							.attr('class', 'icons-color')
-							.html('<i class="fas fa-angle-down"></i>')
+				.attr('class', 'icons-color')
+				.html('<i class="fas fa-angle-down"></i>')
   	}
 
   	activeCurrencies()
 
   	// Swap currencies on click
   	const swap = d3.select('#swap')
-			  	.on('click', () => {
-			  		showedData = showedData.reverse()
+	.on('click', () => {
+		showedData = showedData.reverse()
 
-			  		currency.html('');
-			  		activeCurrencies();
-			  		exchangeRates()
-			  	});
+		currency.html('');
+		activeCurrencies();
+		exchangeRates()
+	});
 
   	currency.on('click', function(d) {
   		const currentSide = d3.select(this.parentNode);
